@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stopwatch.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="./stopwatch.js"></script>
+    <title>StopWatch</title>
+</head>
+<body>
+    <div class="main">
+        <div class="round d-flex">
+          <h1 style="margin-left: 35%;" id="display">0 </h1>
+          <h1 id="dis">: </h1>
+          <h1 id="display2"> 00</h1>
+        </div>
+        <div class="write">
+            <div><span>Minutes: </span><input id="minute" class="form-group form-control-lg w-25 input-field" oninput="handleMinute(this)" type="number"></div>
+            <div><span>Seconds: </span><input id="second" class="form-group form-control-lg w-25 input-field" oninput="handleSecond(this)" type="number"></div>
+        </div>
+        <div class="buttons">
+            <button class="btn btn-danger gree" onclick="handleReset()">Reset Time</button>
+            <button class="btn btn-success" id="start" onclick="handleStart()">Start</button>
+        </div>
+    </div>
+</body>
+</html>

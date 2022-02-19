@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stopwatch.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>initial</title>
+</head>
+<body>
+    <div class="main"></div>
+        <div class="buttons">
+            <button class="btn btn-danger gree"id="hour"></button>
+            <button class="btn btn-success"id="minute"></button>
+            <button class="btn btn-success"id="second"></button>
+            <button class="btn btn-success"onclick="handleStop()">Stop</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+let hour = 0;
+let minute = 0;
+let second = 0;
+let stopTime;
+let press = 0;
+let newM;
+let newS;
+let fresh;
+let display = document.getElementById('');
+
+    function displayTime(params){
+      
+        stopTime = setInterval(()=>{
+            document.getElementById('second').innerHTML="";
+            second++;
+            document.getElementById('second').innerHTML = second;
+            document.getElementById('minute').innerHTML = minute;
+            document.getElementById('hour').innerHTML = hour;
+
+        if (second == 60) {
+            second = 0;
+            minute++;
+            document.getElementById('minute').innerHTML="";
+            document.getElementById('minute').innerHTML=minute;   
+        }
+        if (minute == 60) {
+            minute = 0;
+            hour++;
+            document.getElementById('hour').innerHTML="";
+            document.getElementById('hour').innerHTML=hour;   
+        }
+         },1000);
+    }
+        displayTime();
+
+        function handleStop(params) {
+          document.getElementById('display');
+            press++;
+        if (press == 1) {
+            clearInterval(stopTime);
+            newM = minute;
+            newS = second;
+        }
+        else if (press == 2) {
+            minute = newM;
+            second = newS;
+            displayTime();
+            setTimeout(()=>{
+                press = 0;
+            },100);
+        }
+cle
+    }
+</script>
